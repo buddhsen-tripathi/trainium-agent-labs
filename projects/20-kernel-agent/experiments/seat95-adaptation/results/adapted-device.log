@@ -1,0 +1,8 @@
+{"host": "seat-97", "execution": "nki.jit standalone device execution", "candidate": "/workspace/level8-seat95-adaptation-shubham-97/solved/level08_seat95_adapted.py", "sha256": "bb6ecb551d1e9488686f3d35a8ed82fd76fc1db926bade2831bd6e8824d794d2", "lnc": 2, "cores": "automatic", "requested_core_count": "1", "platform": "trn2", "suite": "official"}
+DEVICE_CASE_START seq=128 dim=64
+{"case": "seq=128 dim=64", "passed": true, "error": null, "shape": [128, 64], "normalized_max_error": 1.1995490154431963e-05, "inputs_unchanged": true, "repeatable": true, "first_call_wall_s": 9.319947512005456, "second_call_wall_s": 1.7314156899956288}
+DEVICE_CASE_START seq=64 dim=128
+{"case": "seq=64 dim=128", "passed": true, "error": null, "shape": [64, 128], "normalized_max_error": 1.0580578076374143e-05, "inputs_unchanged": true, "repeatable": true, "first_call_wall_s": 1.688031982004759, "second_call_wall_s": 1.6961056260042824}
+DEVICE_CASE_START seq=96 dim=32
+{"case": "seq=96 dim=32", "passed": true, "error": null, "shape": [96, 32], "normalized_max_error": 1.2221260755731916e-05, "inputs_unchanged": true, "repeatable": true, "first_call_wall_s": 1.8976676750025945, "second_call_wall_s": 1.7050475849973736}
+ON DEVICE: 3/3 cases correct

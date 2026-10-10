@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/level8-seat95-adaptation-shubham-97/tests/check_attention.py", line 81, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/workspace/level8-seat95-adaptation-shubham-97/tests/check_attention.py", line 44, in main
+    issues = nb.check_rules(source, 8) + lint_kernel(source, level=8)
+                                         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: lint_kernel() got an unexpected keyword argument 'level'

@@ -1,0 +1,55 @@
+{
+  "agent_returncode": 0,
+  "command": [
+    "/opt/conda/bin/python3",
+    "-u",
+    "-B",
+    "agent.py",
+    "--level",
+    "8",
+    "--rounds",
+    "3",
+    "--samples",
+    "2",
+    "--repeat",
+    "2",
+    "--context",
+    "8192",
+    "--max-tokens",
+    "3000",
+    "--base",
+    "http://localhost:8000/v1",
+    "--model",
+    "Qwen/Qwen3-8B",
+    "--lint",
+    "--level-hints",
+    "--portfolio",
+    "--echo-check",
+    "--log",
+    "results/agent-fresh.jsonl"
+  ],
+  "runs": [
+    {
+      "run": 0,
+      "solved": true,
+      "round": 0,
+      "sample": 0,
+      "candidate": "solved/level08_generated_run0.py",
+      "checks": {
+        "independent": 0,
+        "device": 0
+      }
+    },
+    {
+      "run": 1,
+      "solved": true,
+      "round": 0,
+      "sample": 0,
+      "candidate": "solved/level08_generated_run1.py",
+      "checks": {
+        "independent": 0,
+        "device": 0
+      }
+    }
+  ]
+}

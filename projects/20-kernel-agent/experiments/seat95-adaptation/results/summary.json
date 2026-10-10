@@ -1,0 +1,129 @@
+{
+  "date_utc": "2026-10-10T21:44:04.625037+00:00",
+  "source_pod": "seat-95",
+  "execution_pod": "seat-97",
+  "remote_workdir": "/workspace/level8-seat95-adaptation-shubham-97",
+  "source_snapshot": "original/snapshot.json",
+  "source_pod_modified": false,
+  "model_server_paused": false,
+  "server_health": {
+    "status": 200,
+    "content": "SEAT97_ADAPTATION_OK",
+    "original_server_pid_103_exists": true
+  },
+  "controller_core_hash": "9d88e4062534",
+  "checker_and_linter_unchanged": true,
+  "original_candidate_official_simulator": "0/3; contraction dimension mismatches",
+  "grade_comparison": {
+    "original": {
+      "reward": 0.30000000000000004,
+      "parts": {
+        "parses": true,
+        "rules": true,
+        "runs": false,
+        "correct": false
+      },
+      "feedback": "A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:\n- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=A^T (c, r), moving=B^T (c, r2).\n- line 45: `nisa.nc_matmul(dst=t_ps, stationary=e_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=e_sb is (seq, seq), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=A^T (c, r), moving=B^T (c, r2).\n- line 46: `nisa.tensor_copy(dst=out_sb, src=t_ps)` -- copying t_ps ('dim', 'seq') into out_sb declared ('seq', 'dim'): shapes must match. Same elements, different layout: a copy keeps the element order, so the data ends up scrambled, not transposed; use nisa.nc_transpose into a psum tile if you need the transpose.\nThe rules, from the AWS NKI docs:\n- nki.isa.nc_matmul docs: \"computes dst = stationary.T @ moving... to multiply [M, K] and [K, N] you need to pass shapes [K, M] and [K, N], as the partition dimension is always the left-most dimension.\" K <= 128, stationary free <= 128, moving free <= 512.\n- nki.isa.nc_transpose docs: \"Tensor Engine nc_transpose must read the input tile from SBUF and write the transposed result to PSUM... [128, 128] or smaller, while Vector Engine can handle [32, 32] or smaller\"; dst must have the same dtype as data.\n- Copy docs: tensor_copy needs \"the same partition axis size and also the same number of elements per partition\"; dma_copy needs \"the total number of data elements in src [to] match that of dst\". Neither transposes."
+    },
+    "adapted": {
+      "reward": 1.0,
+      "parts": {
+        "parses": true,
+        "rules": true,
+        "runs": true,
+        "correct": true
+      },
+      "feedback": "Correct on every shape."
+    }
+  },
+  "fresh_runs_solved": 2,
+  "fresh_runs_total": 2,
+  "fresh_candidates_correct": 4,
+  "fresh_candidates_total": 4,
+  "fresh_selected_rounds": [
+    0,
+    0
+  ],
+  "prompt_tokens_total": 6060,
+  "completion_tokens_total": 4115,
+  "checks": {
+    "adapted": {
+      "device_cases_passed": 3,
+      "device_cases_total": 3,
+      "calls_per_shape": 2,
+      "all_inputs_unchanged": true,
+      "all_repeats_bitwise_equal": true,
+      "max_device_normalized_error": 1.2221260755731916e-05,
+      "kernel_sha256": "bb6ecb551d1e9488686f3d35a8ed82fd76fc1db926bade2831bd6e8824d794d2",
+      "simulator_cases_passed": 24,
+      "simulator_cases_total": 24,
+      "simulator_max_normalized_error": 6.396885065417666e-06,
+      "all_simulated_traffic_at_floor": true
+    },
+    "generated-run0": {
+      "device_cases_passed": 3,
+      "device_cases_total": 3,
+      "calls_per_shape": 2,
+      "all_inputs_unchanged": true,
+      "all_repeats_bitwise_equal": true,
+      "max_device_normalized_error": 1.2221260755731916e-05,
+      "kernel_sha256": "4460dc8d1d0e6ef3e56a5909643c0e42d1699507d463deead43265539f7beda9",
+      "simulator_cases_passed": 24,
+      "simulator_cases_total": 24,
+      "simulator_max_normalized_error": 6.396885065417666e-06,
+      "all_simulated_traffic_at_floor": true
+    },
+    "generated-run1": {
+      "device_cases_passed": 3,
+      "device_cases_total": 3,
+      "calls_per_shape": 2,
+      "all_inputs_unchanged": true,
+      "all_repeats_bitwise_equal": true,
+      "max_device_normalized_error": 1.2221260755731916e-05,
+      "kernel_sha256": "4460dc8d1d0e6ef3e56a5909643c0e42d1699507d463deead43265539f7beda9",
+      "simulator_cases_passed": 24,
+      "simulator_cases_total": 24,
+      "simulator_max_normalized_error": 6.396885065417666e-06,
+      "all_simulated_traffic_at_floor": true
+    }
+  },
+  "hardware_env": {
+    "NEURON_RT_NUM_CORES": "1",
+    "NEURON_RT_VISIBLE_CORES": null,
+    "NEURON_LOGICAL_NC_CONFIG": "2",
+    "NEURON_PLATFORM_TARGET_OVERRIDE": "trn2"
+  },
+  "timing_scope": "Wall times include host/compiler/runtime/transfers; no isolated kernel latency benchmark.",
+  "files": {
+    "results/validation.log": "51f5b85dbd9051d1287215e279508d4e6e5229e517df0f43b594c643b90f167e",
+    "results/original-official.log": "87c2d80099a7082bcca945f468c51241e3bfddd22b9ff788bb1d79b6a2615297",
+    "results/validation-summary.json": "33272b9d801bc4d91f99516bb091582f5a94be04a70052e87185f48fa9f7889f",
+    "results/adapted-official.log": "9aa59c1c2fc1b59328c9dc2b4c0857dc4977b631f16b32874307381f15e626c4",
+    "results/adapted-independent-v1.log": "9e0ec16a2d00fbaf3b0b735727d484630e9f8a0d6f17c321e13d04214f2cab16",
+    "results/validation-followup.log": "f9fbea8c9138384297212805d913086deed001883f2fc5dc5211b59661e87ec0",
+    "results/adapted-independent.log": "0de83ea3567a1a3c199c55c7bc930fa0f8f853571c0e9a1eca4cb6784c5477cd",
+    "results/adapted-independent.json": "4e34d7f0374908e6c8d427992150b28441ef18df447a5b3456e8c3df20fd598a",
+    "results/adapted-device.log": "43e545ce99d788f3e9c3fb9f72b2798af2a6a689bcfcdc4f827774c13815e30f",
+    "results/adapted-device.json": "4f287d50f99537399607651bcf6d1d25a25380df97f495391565f800ae40bbc7",
+    "results/grade-comparison.json": "359c732b67a5f460ba03139b7514ab08d82ae5f1585a64aca098ecb73fdf82ab",
+    "results/generation.log": "4398ae7c615ca0e8366349cf485508d88a7f20d105eb0da93a28a60ae3a8896c",
+    "results/agent-fresh.log": "139bc342f8fbe5f37f08a78bb1115a53ff6011078caf1e7f61a95989e4643ae7",
+    "results/agent-fresh.jsonl": "bdad548714a7fa310f3d1c12cc507cfd768e6f1d39a820028cf0ef8c4b6ba2ad",
+    "results/generated-run0-independent.log": "0de83ea3567a1a3c199c55c7bc930fa0f8f853571c0e9a1eca4cb6784c5477cd",
+    "results/generated-run0-independent.json": "4e34d7f0374908e6c8d427992150b28441ef18df447a5b3456e8c3df20fd598a",
+    "results/generated-run0-device.log": "fbf57ceb4d59adf3f13211f079377ef64061a5a440dc9f7b5678d94d7af63eb6",
+    "results/generated-run0-device.json": "0dd6e37ff0c0fba5b218339a45e9acf2fcc7a39212593f6fc7a931dcf3b01a48",
+    "results/generation-summary.json": "d62a15ed169a2060a2159d724f5ff82573cedb6340df7ec40f80b959c4ee6e08",
+    "results/generated-run1-independent.log": "0de83ea3567a1a3c199c55c7bc930fa0f8f853571c0e9a1eca4cb6784c5477cd",
+    "results/generated-run1-independent.json": "4e34d7f0374908e6c8d427992150b28441ef18df447a5b3456e8c3df20fd598a",
+    "results/generated-run1-device.log": "65e7148296b75122683b3e768c826af6b277ce0b66d2c9a918aaec2169099397",
+    "results/generated-run1-device.json": "f7092900d44792500eb5bc1f30f02e00f0fedbef012d4e12f94a7645ae2752f0",
+    "results/server-health.json": "133eefe1eb263c5daf46df29f56ff5ca8b6a4bee27120a2e1ff9b033a9131f60",
+    "solved/level08_seat95_adapted.py": "bb6ecb551d1e9488686f3d35a8ed82fd76fc1db926bade2831bd6e8824d794d2",
+    "solved/level08_generated_run0.py": "4460dc8d1d0e6ef3e56a5909643c0e42d1699507d463deead43265539f7beda9",
+    "solved/level08_generated_run1.py": "4460dc8d1d0e6ef3e56a5909643c0e42d1699507d463deead43265539f7beda9",
+    "run_validation.py": "c583d66fbb88c495e158de22a46eb0f8adca26903856a05b75d9bee2bb114d03",
+    "run_followup.py": "e17f9f40274a8d2d02009c8ee03a757d32ba9cc06e1852d2b5cd77095a1dc97e",
+    "run_generation.py": "67b306b33ddb11294fe70c29f9ffb133dd38ccc7bfa5c145a09ac1d734f064e2"
+  }
+}

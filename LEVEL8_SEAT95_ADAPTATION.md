@@ -12,7 +12,9 @@ We copied a fresh snapshot of `/workspace/projects/02-kernel-agent` from **seat 
 
 Seat 95 was read only throughout. Its project and running jobs were not edited or stopped. Seat 97's existing model server stayed running. The previously successful seat 97 experiment in `/workspace/level8-repair-shubham-97-planned` was preserved.
 
-The selected original candidate fails all three official Level 8 cases. Its human-adapted version passes all three official cases on actual Trainium2 hardware, each executed twice, and passes 24 supplementary simulator cases. This human repair is distinguished from the separate fresh model-generation experiment described below.
+The selected original candidate fails all three official Level 8 cases. Its human-adapted version passes all three official cases on actual Trainium2 hardware, each executed twice, and passes 24 supplementary simulator cases. The adapted agent also solved **2/2 fresh runs on round 0**, with all four sampled candidates correct. Each selected generated kernel passed the same hardware and supplementary checks. This human repair is distinguished from the fresh model-generation experiment described below.
+
+Start with [results/summary.json](projects/20-kernel-agent/experiments/seat95-adaptation/results/summary.json) for the final machine-readable results, provenance, and evidence-file hashes. The post-test inference probe returned HTTP 200 and `SEAT97_ADAPTATION_OK`; the original model-server PID 103 still existed.
 
 Local experiment: [projects/20-kernel-agent/experiments/seat95-adaptation](projects/20-kernel-agent/experiments/seat95-adaptation).
 
@@ -93,7 +95,28 @@ A first supplementary-runner invocation stopped before numerical execution becau
 
 The adapted seat 95 agent runs against seat 97's existing `Qwen/Qwen3-8B` endpoint with two repeats, two samples per round, up to three rounds, context 8192, maximum completion 3000, lint, level hints, temperature portfolio, and echo checking. Successful selected kernels receive separate supplementary simulation and actual hardware checks.
 
-Results are pending while this document is first written; read `results/generation-summary.json` after completion. Do not treat the human repair above as a model-generated solve.
+**Completed result: 2/2 runs solved on round 0; all four candidates scored 1.00.** All completions ended with `stop`. Each request used 1515 prompt tokens; completions ranged from 1025 to 1034 tokens. Aggregate usage was 6060 prompt tokens and 4115 completion tokens across the four requests.
+
+| Selected generated kernel | Official cases in agent simulator | Supplementary simulator cases | Official hardware cases |
+|---|---|---|---|
+| [Run 0](projects/20-kernel-agent/experiments/seat95-adaptation/solved/level08_generated_run0.py) | 3/3 | 24/24 | 3/3, each called twice |
+| [Run 1](projects/20-kernel-agent/experiments/seat95-adaptation/solved/level08_generated_run1.py) | 3/3 | 24/24 | 3/3, each called twice |
+
+Both selected kernels are byte-identical, SHA256 `4460dc8d1d0e6ef3e56a5909643c0e42d1699507d463deead43265539f7beda9`. The two runs establish repeatability of this smoke experiment, not diversity of solutions or a general solve-rate estimate. No paired fresh baseline run was performed. The baseline candidate failure and previous running seat 95 logs are separate observations.
+
+For both generated kernels, maximum normalized device error was `1.22213e-5`; repeated outputs were bitwise equal and inputs unchanged. Their supplementary simulations had maximum normalized error `6.39689e-6` and minimum simulated HBM traffic in all 24 cases.
+
+Evidence:
+
+- [agent-fresh.jsonl](projects/20-kernel-agent/experiments/seat95-adaptation/results/agent-fresh.jsonl): all four complete model responses as extracted code, grades, token counts, generation settings, selection, and source hash.
+- [generation-summary.json](projects/20-kernel-agent/experiments/seat95-adaptation/results/generation-summary.json): completed generation command and per-run follow-up exit codes.
+- [adapted-device.json](projects/20-kernel-agent/experiments/seat95-adaptation/results/adapted-device.json): the human-repaired candidate's device results.
+- [generated-run0-device.json](projects/20-kernel-agent/experiments/seat95-adaptation/results/generated-run0-device.json) and [generated-run1-device.json](projects/20-kernel-agent/experiments/seat95-adaptation/results/generated-run1-device.json): actual device execution of the generated kernels.
+- `results/*-independent.json`: the supplementary simulator records for each saved kernel. `solved/*.provenance.json`: source and validation provenance.
+- `results/original-official.log`, `results/adapted-official.log`, and `results/grade-comparison.json`: original failure, repaired official-check success, and grader comparison.
+- `results/adapted-independent-v1.log`: the preserved supplementary-runner interface error before its correction.
+
+These checks establish that the copied seat 95 code can be adapted successfully for Level 8 on seat 97. Do not treat the human repair as a model-generated solve, or the 24 simulator cases as hardware coverage.
 
 ## Reproduction
 

@@ -1,0 +1,22 @@
+{
+  "original": {
+    "reward": 0.30000000000000004,
+    "parts": {
+      "parses": true,
+      "rules": true,
+      "runs": false,
+      "correct": false
+    },
+    "feedback": "A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:\n- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=A^T (c, r), moving=B^T (c, r2).\n- line 45: `nisa.nc_matmul(dst=t_ps, stationary=e_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=e_sb is (seq, seq), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=A^T (c, r), moving=B^T (c, r2).\n- line 46: `nisa.tensor_copy(dst=out_sb, src=t_ps)` -- copying t_ps ('dim', 'seq') into out_sb declared ('seq', 'dim'): shapes must match. Same elements, different layout: a copy keeps the element order, so the data ends up scrambled, not transposed; use nisa.nc_transpose into a psum tile if you need the transpose.\nThe rules, from the AWS NKI docs:\n- nki.isa.nc_matmul docs: \"computes dst = stationary.T @ moving... to multiply [M, K] and [K, N] you need to pass shapes [K, M] and [K, N], as the partition dimension is always the left-most dimension.\" K <= 128, stationary free <= 128, moving free <= 512.\n- nki.isa.nc_transpose docs: \"Tensor Engine nc_transpose must read the input tile from SBUF and write the transposed result to PSUM... [128, 128] or smaller, while Vector Engine can handle [32, 32] or smaller\"; dst must have the same dtype as data.\n- Copy docs: tensor_copy needs \"the same partition axis size and also the same number of elements per partition\"; dma_copy needs \"the total number of data elements in src [to] match that of dst\". Neither transposes."
+  },
+  "adapted": {
+    "reward": 1.0,
+    "parts": {
+      "parses": true,
+      "rules": true,
+      "runs": true,
+      "correct": true
+    },
+    "feedback": "Correct on every shape."
+  }
+}

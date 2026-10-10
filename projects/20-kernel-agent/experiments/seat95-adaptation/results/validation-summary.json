@@ -1,0 +1,65 @@
+{
+  "original-official": {
+    "returncode": 1,
+    "command": [
+      "/opt/conda/bin/python3",
+      "-B",
+      "nkibench.py",
+      "--level",
+      "8",
+      "--check",
+      "original/original_level08_attention.py"
+    ]
+  },
+  "adapted-official": {
+    "returncode": 0,
+    "command": [
+      "/opt/conda/bin/python3",
+      "-B",
+      "nkibench.py",
+      "--level",
+      "8",
+      "--check",
+      "solved/level08_seat95_adapted.py"
+    ]
+  },
+  "adapted-independent-v1": {
+    "returncode": 1,
+    "command": [
+      "/opt/conda/bin/python3",
+      "-B",
+      "tests/check_attention.py",
+      "solved/level08_seat95_adapted.py",
+      "--json",
+      "results/adapted-independent.json"
+    ]
+  },
+  "adapted-independent": {
+    "returncode": 0,
+    "command": [
+      "/opt/conda/bin/python3",
+      "-B",
+      "tests/check_attention.py",
+      "solved/level08_seat95_adapted.py",
+      "--json",
+      "results/adapted-independent.json"
+    ]
+  },
+  "adapted-device": {
+    "returncode": 0,
+    "command": [
+      "/opt/conda/bin/python3",
+      "-u",
+      "-B",
+      "tests/check_attention_device.py",
+      "solved/level08_seat95_adapted.py",
+      "--lnc",
+      "2",
+      "--suite",
+      "official",
+      "--json",
+      "results/adapted-device.json",
+      "--stop-on-error"
+    ]
+  }
+}

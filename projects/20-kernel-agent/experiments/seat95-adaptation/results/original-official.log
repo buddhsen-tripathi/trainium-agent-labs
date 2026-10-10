@@ -1,0 +1,15 @@
+level 8: single-head attention
+  rules      clean
+  numerics   0/3 shapes passed
+
+  case seq=128 dim=64:
+    RAISED during simulation: AssertionError: Matmul contraction dimension mismatch: stationary[0]=128 != moving[0]=64
+
+  case seq=64 dim=128:
+    RAISED during simulation: AssertionError: Matmul contraction dimension mismatch: stationary[0]=64 != moving[0]=128
+
+  case seq=96 dim=32:
+    RAISED during simulation: AssertionError: Matmul contraction dimension mismatch: stationary[0]=96 != moving[0]=32
+
+  ^ feed this text back to the model. If it is not enough to locate the bug,
+    improve THIS message before you touch the prompt.

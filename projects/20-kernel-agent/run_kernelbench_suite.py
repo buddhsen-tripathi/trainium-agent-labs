@@ -56,8 +56,10 @@ def extract(reply):
 
 def prompt(level, previous=None):
     definition = kb.LEVELS[level]
+    reference = inspect.getsource(definition["ref"])
+    reference = reference.replace(f"def {definition['ref'].__name__}(", "def kernel(", 1)
     task = (f"Write a NumPy function named kernel matching this reference and its signature:\n"
-            f"{inspect.getsource(definition['ref'])}\n"
+            f"{reference}\n"
             "Use explicit loops over tiles of at most 128 rows and 512 columns. "
             "Handle partial tiles and dimensions of one. Return one complete Python code block, "
             "including imports, with no prose.\n")
@@ -120,6 +122,7 @@ def run(options):
             print(f"LEVEL_START {level} {kb.LEVELS[level]['name']}", flush=True)
             for round_index in range(options.rounds):
                 text = prompt(level, previous)
+                round_best = None
                 with ThreadPoolExecutor(max_workers=options.samples) as pool:
                     jobs = [pool.submit(ask, text, sample) for sample in range(options.samples)]
                     for sample, job in enumerate(jobs):
@@ -143,13 +146,16 @@ def run(options):
                                    verdict["passed"], -len(verdict.get("violations", [])))
                             if best is None or key > best[0]:
                                 best = (key, record["source"], verdict, stem)
+                            if round_best is None or key > round_best[0]:
+                                round_best = (key, record["source"], verdict, stem)
                         except Exception:
                             record["error"] = traceback.format_exc()
                         log.write(json.dumps(record) + "\n")
                         print(json.dumps({k: record[k] for k in ("level", "round", "sample", "verdict", "error")
                                           if k in record}), flush=True)
                 if best:
-                    previous = best[1:3]
+                    if round_best:
+                        previous = round_best[1:3]
                     if best[2]["ok"]:
                         break
             if best:
