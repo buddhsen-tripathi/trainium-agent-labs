@@ -1,0 +1,50 @@
+endpoint http://localhost:8000/v1  model Qwen/Qwen3-8B
+
+################ run 1 of 2 ################
+
+=========== level 8: single-head attention ===========
+round 0: this round 0.30  best so far 0.30  (49.3s)
+  A static check found 6 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 19: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+round 1: this round 0.30  best so far 0.30  (48.5s)
+  A static check found 6 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 19: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+round 2: this round 0.30  best so far 0.30  (50.0s)
+  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 19: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+  (echo: the best reply is the kernel we sent, unchanged)
+round 3: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 3 failed attempts to break the repeat
+  not solved in 4 rounds; best reward 0.30
+
+=========== summary ===========
+  level 8  reward 0.30 after 4 round(s)
+  solved 0/1
+
+################ run 2 of 2 ################
+
+=========== level 8: single-head attention ===========
+round 0: this round 0.30  best so far 0.30  (51.4s)
+  A static check found 6 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 19: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+round 1: this round 0.30  best so far 0.30  (47.1s)
+  A static check found 6 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 18: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+round 2: this round 0.30  best so far 0.30  (48.4s)
+  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 18: `nisa.nc_transpose(dst=t_ps, data=q)` -- `data=q` is in hbm, must be sbuf: nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; an sbuf destination would send it to the Vector engine, limited to 32x32. Allocate it with nl.ndarray(shape, dtype=..., buffer=nl.sbuf).
+  (echo: the best reply is the kernel we sent, unchanged)
+round 3: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 3 failed attempts to break the repeat
+  not solved in 4 rounds; best reward 0.30
+
+=========== summary ===========
+  level 8  reward 0.30 after 4 round(s)
+  solved 0/1
+
+=========== over 2 runs ===========
+  level 8: solved 0/2  best 0.30  worst 0.30  mean 0.30  all=[0.3, 0.3]
+
+  Report the rate, not your best run. A level that solves 1 in 3 times is not solved.
+
+attempts logged to results/agent-repair.jsonl

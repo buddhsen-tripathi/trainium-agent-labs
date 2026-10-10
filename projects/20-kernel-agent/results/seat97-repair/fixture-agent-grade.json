@@ -1,0 +1,10 @@
+{
+  "reward": 1.0,
+  "parts": {
+    "parses": true,
+    "rules": true,
+    "runs": true,
+    "correct": true
+  },
+  "feedback": "Correct on every shape."
+}

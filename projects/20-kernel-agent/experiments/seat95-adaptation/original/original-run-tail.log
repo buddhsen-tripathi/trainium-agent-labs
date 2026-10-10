@@ -1,0 +1,86 @@
+lem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 2: this round 0.30  best so far 0.30  (16.8s)
+  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 3: this round 0.30  best so far 0.30  (17.1s)
+  A static check found 4 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 4: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 4 failed attempts to break the repeat
+round 5: this round 0.30  best so far 0.30  (17.1s)
+  A static check found 2 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 6: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 5 failed attempts to break the repeat
+round 7: same failure again (0.30, best so far 0.30)
+  same failure 3x — adding a ledger of 5 failed attempts to break the repeat
+  not solved in 8 rounds; best reward 0.30
+
+=========== summary ===========
+  level 8  reward 0.30 after 8 round(s)
+  solved 0/1
+
+################ run 2 of 4 ################
+
+=========== level 8: single-head attention ===========
+round 0: this round 0.30  best so far 0.30  (18.5s)
+  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 27: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps)` -- `moving=t_ps` is in psum, must be sbuf: nc_matmul writes into psum and reads both operands from sbuf. t_ps must stay in psum (line 26 writes it there), so do NOT re-allocate it: copy it into a NEW sbuf tile first -- t_ps_sb = nl.ndarray(
+round 1: this round 0.30  best so far 0.30  (16.8s)
+  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 2: this round 0.30  best so far 0.30  (16.8s)
+  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 3: this round 0.30  best so far 0.30  (17.1s)
+  A static check found 4 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 4: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 4 failed attempts to break the repeat
+round 5: this round 0.30  best so far 0.30  (17.1s)
+  A static check found 2 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 6: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 5 failed attempts to break the repeat
+round 7: same failure again (0.30, best so far 0.30)
+  same failure 3x — adding a ledger of 5 failed attempts to break the repeat
+  not solved in 8 rounds; best reward 0.30
+
+=========== summary ===========
+  level 8  reward 0.30 after 8 round(s)
+  solved 0/1
+
+################ run 3 of 4 ################
+
+=========== level 8: single-head attention ===========
+round 0: this round 0.30  best so far 0.30  (18.2s)
+  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 27: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps)` -- `moving=t_ps` is in psum, must be sbuf: nc_matmul writes into psum and reads both operands from sbuf. t_ps must stay in psum (line 26 writes it there), so do NOT re-allocate it: copy it into a NEW sbuf tile first -- t_ps_sb = nl.ndarray(
+round 1: this round 0.30  best so far 0.30  (16.7s)
+  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=
+round 2: same failure again (0.30, best so far 0.30)
+  same failure 2x — adding a ledger of 2 failed attempts to break the repeat
+round 3: same failure again (0.30, best so far 0.30)
+  same failure 3x — adding a ledger of 2 failed attempts to break the repeat
+round 4: same failure again (0.30, best so far 0.30)
+  STOPPING this level: the identical failure 4 rounds running. The agent is cycling between a fixed set of mistakes rather than converging, so more rounds will not help. Failures seen:
+    4x  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.n
+    1x  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 27: `nisa.n
+
+=========== summary ===========
+  level 8  reward 0.30 after 5 round(s)
+  solved 0/1
+
+################ run 4 of 4 ################
+
+=========== level 8: single-head attention ===========
+round 0: this round 0.30  best so far 0.30  (18.8s)
+  A static check found 5 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 27: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps)` -- `moving=t_ps` is in psum, must be sbuf: nc_matmul writes into psum and reads both operands from sbuf. t_ps must stay in psum (line 26 writes it there), so do NOT re-allocate it: copy it into a NEW sbuf tile first -- t_ps_sb = nl.ndarray(
+round 1: this round 0.30  best so far 0.30  (16.6s)
+  A static check found 3 problem(s) before running the kernel. Fix ALL of them in this reply:
+- line 28: `nisa.nc_matmul(dst=t_ps, stationary=q_sb, moving=t_ps_sb)` -- nc_matmul sums over the FIRST (partition) axis of both operands, so they must match: stationary=q_sb is (seq, dim), moving=t_ps_sb is (dim, seq). To get A times B-transposed for A (r, c) and B (r2, c), pass the TRANSPOSES: stationary=

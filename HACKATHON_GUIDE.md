@@ -676,3 +676,29 @@ Then establish only the live facts this snapshot cannot know:
 **Recommended next action:** get the NKI reference check and a level-4 baseline running, then implement shared verification gates, complete attempt metadata, and one repair improvement targeted at the observed failure. If seat/SDK access is unavailable, switch deliberately to `kernelbench.py` and strengthen its legality checks before automating its repair loop.
 
 After each meaningful implementation or evaluation, append a short dated update here with the commit, exact command, result files, measured result, and unresolved issue. That keeps this guide useful without another full-repo analysis.
+
+## Read-only seat-95 attention audit, October 10, 2026
+
+For current remote level-8 context, read [LEVEL8_READONLY_ANALYSIS.md](LEVEL8_READONLY_ANALYSIS.md). It supersedes the initial snapshot for the inspected remote system. The remote project is `/workspace/projects/02-kernel-agent`; its latest inspected source hash is `ce85a6338485`, and it already guards the old attention `KeyError: 'M'` and includes matching standalone verification gates. The local checkout is now `team20-kernel-agent`, with code under `projects/20-kernel-agent`; the three current core source files have the same combined hash as the remote snapshot, but paths and saved artifacts differ.
+
+At the frozen 4:20:41 p.m. New York snapshot, four level-8 experiment files contained 124 candidates and no successful simulator result/correct candidate. All 36 candidates in the newest experiment were statically rejected; its first complete run failed after eight rounds. Actual defects include incorrect nc_matmul contraction layouts, reusing a `(D,N)` transpose buffer for `(N,N)` scores, calling the SDK's string dtype `nl.float32` as a function, reversed attention scaling, nonexistent `nisa.sum`, the wrong final product/output layout, and a direct PSUM-to-HBM DMA.
+
+Controller issues include contradictory pretransposed-input guidance, lint rejection bypassing richer attention hints, narrow repair instructions preserving undiscovered defects, output-allocation advice that can violate the task contract, and tie-breaking that favors novelty without validated stage progress. Recorded token usage and `finish=stop` provide no evidence of context exhaustion as the present cause. Remote helper levels 9–11 now exist, unlike the original ladder snapshot.
+
+This audit only read remote sources, installed SDK text, and existing records. No remote code/file edits, model calls, kernels, simulations, tests, or benchmarks were run. An already-running agent continued on its own; it was not stopped or restarted. Only this guide and the local analysis document were written.
+
+## Seat-97 repair, October 10, 2026
+
+The user subsequently authorized repair and execution on seat 97. Read [LEVEL8_SEAT97_REPAIR.md](LEVEL8_SEAT97_REPAIR.md) for the latest commands, source versions, saved evidence, and model-generation results. It supersedes the earlier audit for the repaired local controller and seat-97 working copies. Seat 95 and seat 97's original project were preserved; repair work lives in isolated directories on seat 97.
+
+A hand-written Level 8 attention fixture passes all three official simulator cases and 24 independent cases; the controller grades it at 1.00. This fixture is explicitly distinguished from model-generated solutions. The current controller fixes attention prompt/layout guidance, repair context, static-check coverage, and selection among equal-reward candidates. Numeric correctness and simulated minimum HBM traffic are established for the fixture; accelerator compilation and latency are not established by those checks.
+
+With the explicit buffer/stage plan, the model then solved **2/2 fresh runs on round 0**; all four candidates passed the three official cases. Each selected kernel passed **24/24 independent cases** with minimum simulated HBM traffic. The actual model-generated solution is [projects/20-kernel-agent/solved/level08_attention.py](projects/20-kernel-agent/solved/level08_attention.py); provenance and all experiment logs are saved alongside the project. The earlier shorter-guidance experiment failed 0/2 runs. Current combined core hash: `d86182cbbed9`, matching `/workspace/level8-repair-shubham-97-planned` on seat 97. Two runs are a smoke evaluation; this does not establish a general solve rate.
+
+### Seat 97 hardware follow-up
+
+The saved model-generated Level 8 kernel subsequently passed **3/3 official shapes on actual Trainium2 hardware**, each executed twice with identical repeated outputs and unchanged inputs. Maximum normalized error was `1.22213e-5` against the checker threshold `0.02`. Automatic allocation with `NEURON_RT_NUM_CORES=1`, no explicit core pin, and LNC 2 succeeded; explicit core 0/1 attempts had failed during runtime initialization. The Qwen model server remained running and answered a fresh inference request afterward. See [LEVEL8_SEAT97_REPAIR.md](LEVEL8_SEAT97_REPAIR.md) Step 5 for the command and [device-summary.json](projects/20-kernel-agent/results/seat97-repair/device-summary.json) for evidence. Hardware coverage is three official cases; the 24 independent cases remain simulator checks. Kernel latency and speedup have not been benchmarked.
+
+### Fresh copy of seat 95's code, adapted on seat 97
+
+For the subsequent request to adapt seat 95's current code, start with [LEVEL8_SEAT95_ADAPTATION.md](LEVEL8_SEAT95_ADAPTATION.md). The isolated experiment preserves seat 95's newer source snapshot and its checker/linter unchanged, repairs a selected failing candidate, and tests a focused Level 8 prompt adaptation in its agent. Seat 95 remains read only; tests execute under `/workspace/level8-seat95-adaptation-shubham-97` on seat 97 with the model server preserved. The document records the exact diffs, provenance, official-case checks, hardware checks, and fresh-generation results.

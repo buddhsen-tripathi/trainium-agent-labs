@@ -1,0 +1,20 @@
+{
+  "host": "seat-97",
+  "execution": "nki.jit standalone device execution",
+  "candidate": "/workspace/level8-repair-shubham-97-planned/solved/level08_attention.py",
+  "sha256": "50840792fec8c59fec2d34a3f29b9f92e86db7ac943f61ad4c6c859728a070e3",
+  "lnc": 2,
+  "cores": "0",
+  "platform": "trn2",
+  "suite": "official",
+  "cases": [
+    {
+      "case": "seq=128 dim=64",
+      "passed": false,
+      "error": "NrtError: NRT Error NRT_FAILURE(1): Failed to initialize NRT runtime",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/level8-repair-shubham-97-planned/tests/check_attention_device.py\", line 60, in main\n    got = np.asarray(kernel[options.lnc](*args))\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/opt/conda/lib/python3.13/site-packages/nki/framework/kernel.py\", line 252, in __call__\n    return k(*args, **kwargs)\n  File \"/opt/conda/lib/python3.13/site-packages/nki/framework/compiled.py\", line 432, in __call__\n    return self._to_subclass(cls)(*args, **kwargs)\n           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.13/site-packages/nki/framework/compiled.py\", line 438, in __call__\n    return _execute_standalone_kernel(self, *args, **kwargs)\n  File \"/opt/conda/lib/python3.13/site-packages/nki/framework/compiled.py\", line 530, in _execute_standalone_kernel\n    return _compile_and_run(\n        replace(\n    ...<3 lines>...\n        )\n    )\n  File \"/opt/conda/lib/python3.13/site-packages/nki/framework/compiled.py\", line 524, in _compile_and_run\n    return run_from_bir(nir, compile_opts, inputs, **executor_kwargs)\n  File \"/opt/conda/lib/python3.13/site-packages/nki/compiler/driver.py\", line 328, in run_from_bir\n    executor(compiled, exec_inputs, output_arrays)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.13/site-packages/nki/compiler/ncc_driver.py\", line 480, in execute\n    result = self._run(\n        inputs,\n    ...<2 lines>...\n        world_size=world_size,\n    )\n  File \"/opt/conda/lib/python3.13/site-packages/nki/compiler/ncc_driver.py\", line 375, in _run\n    model = self._ensure_loaded(rank_id, world_size)\n  File \"/opt/conda/lib/python3.13/site-packages/nki/compiler/ncc_driver.py\", line 327, in _ensure_loaded\n    self._models[rank_id] = SpikeModel.load_from_neff(\n                            ~~~~~~~~~~~~~~~~~~~~~~~~~^\n        neff_path=self.neff_path,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n        world_size=world_size,\n        ^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/opt/conda/lib/python3.13/site-packages/nrtpy/spike_model.py\", line 223, in load_from_neff\n    model_ref = get_spike_singleton().load_model(\n                ~~~~~~~~~~~~~~~~~~~^^\n  File \"/opt/conda/lib/python3.13/site-packages/nrtpy/spike_singleton.py\", line 147, in get_spike_singleton\n    _runtime = _Spike()  # Constructor does nrt_init via RAII\nnrtpy._nrtpy.NrtError: NRT Error NRT_FAILURE(1): Failed to initialize NRT runtime\n"
+    }
+  ],
+  "passed": 0,
+  "total": 1
+}

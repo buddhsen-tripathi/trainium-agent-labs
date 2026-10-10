@@ -1,0 +1,25 @@
+PASS random-128x64-seed17
+PASS random-128x64-seed97
+PASS random-128x64-seed2026
+PASS zero-q-128x64
+PASS constant-v-128x64
+PASS large-logits-128x64
+PASS permuted-kv-128x64
+PASS random-64x128-seed17
+PASS random-64x128-seed97
+PASS random-64x128-seed2026
+PASS zero-q-64x128
+PASS constant-v-64x128
+PASS large-logits-64x128
+PASS permuted-kv-64x128
+PASS random-96x32-seed17
+PASS random-96x32-seed97
+PASS random-96x32-seed2026
+PASS zero-q-96x32
+PASS constant-v-96x32
+PASS large-logits-96x32
+PASS permuted-kv-96x32
+PASS extra-shape-32x48
+PASS extra-shape-16x16
+PASS extra-shape-1x8
+24/24 independent cases passed

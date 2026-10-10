@@ -32,11 +32,11 @@ RULES = {
     "reciprocal": (("dst", {"sbuf", "psum"}), ("data", {"sbuf", "psum"})),
 }
 WHY = {
+    "dma_copy": "dma_copy moves between HBM and sbuf, not psum; copy a psum result into sbuf with tensor_copy first",
     "nc_matmul": "nc_matmul writes into psum and reads both operands from sbuf",
     "nc_transpose": "nc_transpose (the Tensor engine, up to 128x128) writes into psum and reads from sbuf; "
                     "an sbuf destination would send it to the Vector engine, limited to 32x32",
     "tensor_copy": "tensor_copy only moves data between sbuf and psum; HBM is reached with dma_copy",
-    "dma_copy": "dma_copy moves data between HBM and sbuf only and cannot touch psum",
     "activation": "compute instructions read and write on-chip tiles (sbuf/psum), never HBM",
     "tensor_scalar": "compute instructions read and write on-chip tiles (sbuf/psum), never HBM",
     "reciprocal": "compute instructions read and write on-chip tiles (sbuf/psum), never HBM",
@@ -132,7 +132,7 @@ def _is_kernel(fn):
     return False
 
 
-def lint_kernel(source):
+def lint_kernel(source, level=None):
     try:
         tree = ast.parse(source)
     except SyntaxError:
@@ -213,7 +213,7 @@ def lint_kernel(source):
         if isinstance(node, ast.Assign) and isinstance(node.value, ast.Attribute) and node.value.attr == "shape" \
                 and isinstance(node.value.value, ast.Name) and isinstance(node.targets[0], ast.Tuple):
             dims = tuple(e.id for e in node.targets[0].elts if isinstance(e, ast.Name))
-            if len(dims) == len(node.targets[0].elts):
+            if len(dims) == len(node.targets[0].elts) and "_" not in dims:
                 shape.setdefault(node.value.value.id, dims)
                 for d in dims:
                     sibling.setdefault(d, node.lineno)
@@ -235,6 +235,13 @@ def lint_kernel(source):
     for node in ast.walk(tree):        # second pass: check every instruction and operator
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
             op = node.func.attr
+            namespace = _name(node.func.value)
+            if namespace == "nisa" and op == "sum":
+                issues.append(f"{at(node)} -- nisa.sum is not an API in this SDK. For a row sum use "
+                              "row_sum = nl.sum(data, axis=[1], keepdims=True).")
+            if namespace == "nisa" and op == "nc_matmul" and any(kw.arg == "transpose_moving" for kw in node.keywords):
+                issues.append(f"{at(node)} -- nc_matmul has no transpose_moving keyword in this SDK. "
+                              "Transpose the required operand explicitly using nc_transpose and tensor_copy.")
             if op in RULES and isinstance(node.func.value, ast.Name) and node.func.value.id == "nisa":
                 given = {kw.arg: kw.value for kw in node.keywords}
                 for (arg, _), val in zip(RULES[op], node.args):   # positional arguments, in order
@@ -468,6 +475,18 @@ def lint_kernel(source):
                               + f"): it holds garbage. Write {t} first (dst={t}), or read the tile that "
                               f"actually holds this value.")
 
+    if level == 8:
+        # Check only a directly known shape in the named entry, not arbitrary helper returns.
+        for fn in ast.walk(tree):
+            if not isinstance(fn, ast.FunctionDef) or fn.name != "nki_attention_" or not fn.args.args:
+                continue
+            expected = shape.get(fn.args.args[0].arg)
+            for node in ast.walk(fn):
+                if isinstance(node, ast.Return) and isinstance(node.value, ast.Name):
+                    actual = shape.get(node.value.id)
+                    if expected and actual and actual != expected:
+                        issues.append(f"{at(node)} -- attention must return Q's shape {expected}, "
+                                      f"but {node.value.id} has shape {actual}. Fix PV and the output layout.")
     seen, out = set(), []
     for i in issues:                   # one report per line and problem
         if i not in seen:

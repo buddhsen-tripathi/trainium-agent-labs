@@ -1,0 +1,26 @@
+[
+  {
+    "case": "seq=128 dim=64",
+    "compiled": true,
+    "device_executed": false,
+    "neff": "/workspace/level8-repair-shubham-97-planned/results/device-compile/seq128-dim64/kernel.neff",
+    "neff_bytes": 52685,
+    "neff_sha256": "a9f1dd512bb0ab43538524c67a42cce1c72e107987b28ac2ea189cea7913703a"
+  },
+  {
+    "case": "seq=64 dim=128",
+    "compiled": true,
+    "device_executed": false,
+    "neff": "/workspace/level8-repair-shubham-97-planned/results/device-compile/seq64-dim128/kernel.neff",
+    "neff_bytes": 52689,
+    "neff_sha256": "f8c0768f12f449c2a9f73d0978729438e7ae8b25076ce05825369e7572e69bb6"
+  },
+  {
+    "case": "seq=96 dim=32",
+    "compiled": true,
+    "device_executed": false,
+    "neff": "/workspace/level8-repair-shubham-97-planned/results/device-compile/seq96-dim32/kernel.neff",
+    "neff_bytes": 52689,
+    "neff_sha256": "114b4fa087b24501ffadbef9a97201b0b103e5bf585a2b0a8abb6f42eeee9741"
+  }
+]

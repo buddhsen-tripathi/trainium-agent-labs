@@ -1,0 +1,3921 @@
+{
+  "suite": "repository ten-level kernelbench challenge",
+  "source": "projects/20-kernel-agent/kernelbench.py",
+  "source_sha256": "fdc31c16566c2ac189b8663f2e4437dc078646e5391f9a6b88b7b5fcf256148f",
+  "seat_requested": 98,
+  "execution_status": "not_started_authentication_required",
+  "default_tolerance": 0.0001,
+  "supplemental_cases_added": false,
+  "levels": [
+    {
+      "level": 1,
+      "name": "elementwise relu(a*x+b)",
+      "signature": "(x, a, b)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "07737e2c3eab255d15c2721722987b22c89e8b7a03c67ce06374162e0ca76557"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "41dca1f953698aa17961483fb44907178c77279078a14d4acd7640ed03e46435"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "259ef08d4e921b269723c7548917de8e73f86684ec822bbd6c8a92306fd174fb"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "f6922ea9ba095e2e71c9b509264ef40ec622ef086483d825a29eb65609361679"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "28eeede4937c49074bfc01ab1e310c28a76af5d285c8c64791d39fbd1a9d4846"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "7d411afe3da6b3cd1b5c2f05d04613f6edbc846f92c317f59d8023e6f20b46dd"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "3b22c74272ca9f5b50d160fadf20d44787a5f516531649e93c79c116b19b9959"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "7575d49ffec98f09b69e31446a14046271adb3b2bd2332550c699e31ab55a51c"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "fc0bd9743fc7b9cca52ec29e68c096cd98ae5de3139db3f72582fdab8608759c"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "92a9010282ec5a0679cb7d7fc988329fb1396195185dca1fa10975912b6f5bb3"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "fe3cc56cdc8aaabef3f4b066b7bc9863d46478739248aff18133228024c35a17"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "e2954e0e0dd16e0554839ee682178160104c39ba721db9253f288d99c4f36be9"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "2b7cbe553d372a4272fcfca8a9ca14e100dfe5d6b3a5d74a5c8854ada709a687"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "c490e6e58cfa1b3beddaebd7a4f106206570813af8d9a8c1a78da7b141e2c693"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "729be6fce72e670a96e653ab6f4e1dcf6068c10895cc5f9c22fd04f7ef642eb0"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "76967dbe14698e93e4075c51a7c50db35178587453cfe0bf4b94d345a7545176"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "d7c29d4d023c60dfdd7154042ccfa254bcb8b5df82d5df03985f5c3b1de19bc5"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "d7216e3057902834d92e2daf7756750841b393f29d391822db9df2a4d81c930d"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "7a6f01f0b35435085b49e09c4c353f685d1028d9777dc25cf15f51b33915a8e3"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "d0ea331512042253984dccbe85f06e20a07122a6084745258c3a38a33e98738a"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "00eef1b289e78e466243411761346bc53952f57549ed9f3a31037ebdec02b965"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "16206f49200c1db93b8094a5b1b9c7e15d4bd4e7cbd81abf901042cc613521fe"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "56b035bface72091677d99b0323cd2b4ceb8d9d8ec02029f1b85d32843e930ae"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "06b61a7154ee6c62fc5e493408f72a45aa731dd0d0b0d83a4370148f056e3535"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            },
+            {
+              "value": 2.5
+            },
+            {
+              "value": -0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "name": "row-wise sum",
+      "signature": "(x)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "0cb1b0e9f8e85bd1368181c72941ee0e05d0735e74df450f4e1ac42a53a7d07a"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "7f5174ff8e7529dba9945e644193c717346be2475af6da7a0a992f9af481445a"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "8a345daf7743397ad5eb57699443d79f428a3c2f2bdc977d649c0fd87e42d53d"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "3b0799c71926efa65c552e6cd3b5ebbe39a48648cfd11b2856148a188a4aa7a2"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "6e8c78c2465c7ad80a3c560571fb8f64b55b536a9e17ca7bf450ee8f12f0f584"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "ba0fddc4409408e23ba79a2398aa1028d893986e5974e52e1fa0cbe01ba4af1e"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "d807eac5d71a6ace859c0dd5b1566acf7dc43c20404c357e6744a5047afe5166"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "714264570e5670971bc8c51be56294b2336f65c86068e0295da2e7c377996063"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "380edac1acf093a9bb00bb1a163973538253c0aac5041f896a4e398584e92aa2"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "62117113c51bc878cdd2f51bf455837b84e8b69bc9356e76736733215cac4759"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "b0c7ed53926bfd1fcd7009a504071f51a9c15b8d126c64af9e85af57612d066a"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "af9bd9d6bf7e33729f33fd12d48296c26402c1980ec6af8be04247c9e5dfd0bb"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "77e18cecb395fc6478ce85dc4f412e4d639f12cfb6831e31815c310cc2480327"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "2d0dc692d03dd386baeea821504a3f4229e1500cc1fa60145e33958e270f9682"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "0c23191ee1a8d88a5cb181bde6442191845c791333bf1054c4a87345274e19c9"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "0da9d0f0928e37975e92a8c305edc2999166800bbdf330d2d87b2c6175bff9d9"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "cbc6b2e816b0fc3bb0b82ad54af48a788a4d736b2548ed7e6c8f9b1db56c622b"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "cbdb7833e13f517628953a7af6b516b5a39e9b3f205874b11b5b3077f8c08aeb"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "4951ff52d846e946bbfa237b2a93ed4cce135509dcdb0e81c32a66319943c1ad"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "7bceb15ad5e591afe0621e99bed7bc344a93d5628bf3b1443e7887ee04013b5c"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "64dc460a8861e7164d50c655257284795e02673440f16b5d24ca8cda7517e554"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "fa7b73c487e02d73d57b63fa2845465756a6ffdbbfc7b9f0a2f61e5147670e30"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "3efa62c6c7b75a27c163a7dc4f0316b0c75d9736600aa2caa7326226c16eda57"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "061a84c5c8ec43838a742dd6d53c57b5b946699ce6bcfc531491b80b625b3ab5"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "name": "row-wise max",
+      "signature": "(x)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "c0762b441d77dae03c7638711e26dde2e8378e37e576504564b04050c27a62aa"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "8023c9cbe942395278f4e5345cc2aaee6040ab752faeaff61ea9ff79fe71c6f2"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "2c5de972808cc79614a4c47289a7553e4e579c11f4f8faad29a75e540aa7593e"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "f4dab5152bcaffc77ce88d41e5dd8e55159afcbc93f1f3df1c695f9aca2e7b8b"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "ad283a17074be80c04c9a4d3f81a85add6e5c74b8ac942b8067435e3170224ec"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "1d558fab59285bb1a403617e44f59a7b469d467f40f069367960e651b5a0e93c"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "850ed8f996076850b2b7dabfcfd37bae4c57c9ada09542332218e68899765ec8"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "34216d394eb1577ccfa002d5c415e0ec9ad730d14e871092c89abd1443c8fc7b"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "aebcf5591437efbab76edebd181fcfee14d67530341caed7994466d1642b26ed"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "04eb52c318915fcaf4c296364bdb3052c9e75b667208d51842e6c3efd3d83f37"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3ede5cb80028be05d5536013f3dd02f11fe5d023a463bc1e2c2c1bf3f19f78d0"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "a37a8a32854b43490d5d9fc43bf8902cd62bd4e0d265b9e11a7ca00c6994564d"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "a5dc230583a53c6328748c29589b453d84020562e4d0c3b074537b33e4676d90"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "f26ecb75e3fc46d6b6f24babc5ff42ad5ff4038abb5134a0f640ddb6be7a51d5"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "4bb47c63831a58606709871e09c8074da960f292bef3efe5e9b58d0003224151"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "d304ba24d274fff046066a596d752fcda597aab874f1837ece9c24e153b9c334"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "1188c61fdd0f357c48191d01fa02516a5861bc0ef4b63734c9333ea55a270e51"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3cadece452e4f809254c19894ea1c7e5016f6a86a468c19a3043babb707f399d"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "259629716239f79e4b112f8df6d37e43f6a030eb353e22f4d55965664bdbfc9e"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "7b3db9875bf3885101c873e9ddacf1e35c69a743fa0ef1c1d680055c916c68af"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "f96fc8b33b656a254e0a179a055efec099728462a4554068d37b180fd8480415"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "00ac246776b1e9ec19fb76be7a2835e30075e5e84dda55e19a98c88c13e42b53"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "7cb79f1a3a25364e6bc056eba5dd9716a48041250c921072721468159396daaa"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "9b9dca1ca4b3afd2d41470b6756bfba8530f768cf4407095393db7a739c14d54"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "name": "RMSNorm over last axis",
+      "signature": "(x, eps=1e-06)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "718462794cba9e4dd33aadfd571eb6e0ca5e17817c08f6f0561fda3fc5eb464f"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "47d11c0c5d003eb4b1fe70a22d8d0431a299007486de4e9b6b04c5f6579664a4"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "7a5e818382d1cae69caf855ff3dd4b99662b1a1a3126c2592c738fafb6c26862"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "51ee9e2aa5512dee8b909a39044a7f5c696f07726307e4bc870472b5fb3f5a25"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "5f33c65be6f1be5f4a19fc24f95656cb30f02e129ae0275c86d75c65d46b9d48"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "73dc751c9bbdf3aedf5ba097d4c90b5af4e2eb7b6318ec579655b07ea57b3b9c"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "50b667559ae9ddd73ca4aa24f088873af6969102c7bfcf62ee229fd88760ac6f"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "bbeecef29ce815baff80b86cc332ffbd50851650602fcbcb002b70fa5d53e1ec"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "c9f06a35cc1f7a66bda85f3e3df571f738fe80eb480924252d4189205c20f54f"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "d1e895d2986447b31274077df9d4eb27a829a695dbd3a8484382a17db92b5091"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "8540ed7d54e59374f87f39ee58d24951ca76947e97f4f34cf78dac2d22f728e9"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "ba7dfd530a4defc9a2e9b2d41ff5632c4e84b3ac3d1d478829042792679e77ec"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "c912510a4bb1c09a73879f6462047f5138b809d3f79f335e68c6eee5a0ef6ea0"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "bf1927641fe8894dbce2370633962b26a77889f18e3cc9589c6ed616796cade1"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "f76758d3fb6f9b51e31e410864db63c8426cae65b7d00a323c7ce1ab2b36b08d"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "c6c25774ba91f34212d651bd177d0fe09d320515ff9c74c9f2ad658e6d15d3d9"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "cb65b5972fd38a2b7f6f088e25330d91aa5206ff5c0f7b57dcc3d5a8b1d8f6bc"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "f365f6f7747e2fe4ac54f5cfd974f676b4d1cc8d4b93b0d99c55ca7a862d20fc"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6e6085889e00cfd57bb5fd06b861cccc801e99f3f9a8275e99684941afb57673"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "ec0e30fd0c692064de682c34f6ee2ac038afe99b448faed5048a80e4cfbbb11e"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "5cb137028123d2a98047c1fb0d66c55b27053e77506057a8b38fff11bd1ce396"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "2816d8a0cf08d39e3060c2db125b7c902b9a0c60769dbee82cb978e8867b7ed9"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "4184a0df664ab49f53953311fda7ac45bd051aa26cea82c4bae8d4d3c31866b1"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "5d038600e8ba08a5735fd00da4e4d679d428583a6474aab09d3d00640b47f699"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "name": "softmax over last axis",
+      "signature": "(x)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "caaf38042a954043753558c0c9da99bba89cd8d00a87777f8e60fea25e756fe6"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "f2d3dc20270a6f7c2935ff0339883747e12b21ca49fd067d15a00849a11c74f9"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "dad43a7a8cfc494bb7b6116ba5646cec9a3f9693e30862ddb93bb0be946af033"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "0745dafb9cfbf504d90548d346eb1848f2d074f42a2e1a932382f46c5a563bef"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "e403dae5725ed9cd3dd4a79518159873583d5ca0a34bacc8abe97ee920e629e7"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "ed2a12446efb5d9961089f3fc499f91ccd702dcda8487564e9ac1b6808838e14"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "5ab46d7b066b793be416970f91187590c99090a4e3ff2b2d618765d541d84ce8"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "bd46d595be3cfab113f8fedb57e2ffa11c77a15494dcc9f60a9010608c95c3d7"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "8292c4f5f3eee67638e8b0ff2ac789d2ad323d2e2222a4fbd6732a75401ff884"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "44d31632e132c07360025aa55447c4c7d0771f029a5e36751b1563535c7b3772"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "804a12c30bb4cbf03bad2d777c7fb6625ccc9f2e4b19bb39981d2de6fc3243e0"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "b6bd6ff24972d7d467d9981e6bef1377a090eccd6742ce6bec2012d8b981aa0c"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "2842d8703778e90e8a1bedf8a14b7d8f2ae565e6ca5499e8410e6bf9fdd04ab2"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "fe0129f56c5174adefbb9670195ac5a82f0a1cfebf91ca6c4defb8211a7b94c5"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "5f78780c9eeb69e0f7c33cd012a97b56370cf720887dee515db1dbd904de03a8"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "1aa8c6ccd5a920b4c0f19f544ed6cdfc75fc6aa9addad30c794174176dddb887"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "47e15c5fedf9a999e43aab241ef6dbc3fe2e94a65c6757c522382818c9ccea60"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "a6b8bfad2121eb36c01c2666604b59aeaadc6c996d745cc782be1f8a1af6044c"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "ba99f23bb4152bed75e7f94fada2a61ce86e5586beac099530cc24973379a862"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "4a504b4f401650088ca5b974afaa833c79e928275b8a94c26150185e2c083919"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "2fa2bde44ef18146d1d808f0d0d73a02f14cc2bb79da073d7cb4061d94fb167f"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "988937ff3eb4f388b3222820f2db287dbce6caec2ebb65267d34efaa44fe27e4"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "975da270b21b4cfe93d7ddf1f720c0e141cc92653cded1441d1586453038cec7"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "b98dbfe7364384e9a4222891915b2f25fd44b9021058e83ffb24fe050a664d3e"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "name": "tiled transpose",
+      "signature": "(x)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "376966e0590c35c17f2259690b0b626350a232a083095e329a3baee598b2b269"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "b915f667535824532e7e700a15b0967f45aec6059a75ba314ffab54b27475db6"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "8ae0eb7ea5194479af3429353ff670707dfbe9e07ba1d0ea132624f3e1d78fee"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "45c998ba76ddb5a4017afc4934524d65861a0dc5a4d272f7d4fab8516c1d8a76"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "462f228e8691438faf1ca35a356c0d9fdf7be26e8a07b1d94596b88f4e0e60c8"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "909b409a757a6e93f6ebc70fc0d1c6307360782e5288d8b8b089d530aa44276b"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "76f1678247cac3832f1891c0cf0da7c2b7ba326ce506782433c1746de7e7c3b1"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "c00d1811f653e25301039ea6880a481159b4b06713986a164407d04a5f50da25"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "d34bf2db3c83d2a295bd7c41158cb7786f0ec390795d2c2305a6134c1d16e4a0"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "72bb1acec90e6f2dbf3fa013be8fd7cdedf3b48955ff7885d3af40101e3a9153"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "a95695f99fae55add820eff101417995e01cf1e0ab6f3de3dd1e67b9b8a9484b"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "f7a598ff32c6c31ea627ad01ac4d5d03722d77616274c2f9ed96dad4d2d3d712"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "900ebd238223cba8d2853dee5321c7b0e48a3e1ea9ac6d6c6ef4a7511c98ae6d"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "4e89ff164c6b57c6baf71b5d87eb647be1b5e707d7512d0b0c3c2e1622d2bbb2"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "41a74ab587b98c6c9336c0cfdffc0f75780e68db11530648703648fe21bffd9c"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "facc87e77d096281816e762435c927e39113ebb3fa0b899457ff4f019c303db6"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "b7bfc9dd9a0bc0372c4ba070b03014f99264b4545dd775a7f23aa2d1c4dc5eb3"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "e5282ce94e69baa6d64447cc0f5f0709989af804f8859adf4f4480791b0826e7"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "358bf0481fc7c7ff869ee0f4afe906c8bde97563817910180d2d84ef25ff7b2d"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "08b81f19d070d3a884cd2e88ca30d7a8bbb7f8d2234f00f899281a44e58c2777"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "862371c00a8cef8cad0fb8934b64037e4cf02eac40bc711a037b0ec831130e97"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "02fd27e2e22ce3d7774f2319569432b7d13e9d3db44dd9340ae2085986a169af"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "8cdbed2e16dced7c081ac56f76d89c961c9ee8cc085d4413f2561ab1b596e01c"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "0072e9becb5bebc6364b0a435383877d1f38a68456893abf09a63288e52289d1"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "name": "tiled matmul with accumulation",
+      "signature": "(a, b)",
+      "total": 10,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal 8x8x8",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "7c2b24e3a0915f0a3dafd0dd0d38d443c155194b022d03c226c51050a119eb8a"
+            },
+            {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "0962c55a90696efe4acc0e7874820e6851b070d8c1821772069d3dca742014b9"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large 8x8x8",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "b28154de3f9a73d5149b3c20c6449a59403f81bf2113b1a03e029442ada5917b"
+            },
+            {
+              "shape": [
+                8,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "09b6654fc05bf3543d08cd90a4bb8125a1bd51934e50bacf5804d0be82420b94"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "normal 128x512x128",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "838c6a6b6a65afefd1a61f76a86c37b6b3d03ee0c8da151d843faa9d412e408b"
+            },
+            {
+              "shape": [
+                512,
+                128
+              ],
+              "dtype": "float32",
+              "sha256": "5684003bb8512c93694d60fceb69abac1f208eca2cdcb4230688ed30365e44f0"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "large 128x512x128",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "a47bac39987ab27416069f269a71157d463e269d3b3dd89cbf520ce86dd3ef4a"
+            },
+            {
+              "shape": [
+                512,
+                128
+              ],
+              "dtype": "float32",
+              "sha256": "1bd5c0f50eb6936f7437d5bf8eea2ebeb0a9ef58fd3f881e84885c2b7dfe9907"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal 129x513x65",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "f80858f422d5ea665fba82cbeef1d1cefd811e901d307132c226bfb7a37ed043"
+            },
+            {
+              "shape": [
+                513,
+                65
+              ],
+              "dtype": "float32",
+              "sha256": "ea85d132c270906590c7bf21c62df4c4caf28211792a9d69607994bf0155affd"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large 129x513x65",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "871a0f526ffcb8c38b5afaae9575d3bd66f4880b0e1ea26ce4083d20c5ad24a9"
+            },
+            {
+              "shape": [
+                513,
+                65
+              ],
+              "dtype": "float32",
+              "sha256": "6b1e0582f9bec469b53a1e9e7f99f740ebe490c091a7fcbb7ff18c2e2afc786b"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "normal 1x31x1",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                31
+              ],
+              "dtype": "float32",
+              "sha256": "7c0dcc026b99c9c24b45d7439fff78f2ae00e1955daff7ee743a793c5601907c"
+            },
+            {
+              "shape": [
+                31,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "5bf5159fbb98083d7dacd80c9c51474f0adf9ebc7a7f324dda09fb7f536ad332"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "large 1x31x1",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                31
+              ],
+              "dtype": "float32",
+              "sha256": "b6349eea07d52563d0ec1ff165defa4fca1bd014042a5a2418d39939a79af0ac"
+            },
+            {
+              "shape": [
+                31,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "0d01e3c4fa551b9e2e3a574cfa19fd792356e64adfa719080accbb82891d7a4f"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal 257x3x129",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "e4356d712ee880de8422d55eae5bc16777e4b0bdd84279162c64a6136211f8ef"
+            },
+            {
+              "shape": [
+                3,
+                129
+              ],
+              "dtype": "float32",
+              "sha256": "c6681a78d762684850f1b3e85ae320210eea314b22832a9ceb316266e692b1cb"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large 257x3x129",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "ea3ae6eaa32f24feb64c04b20a6d85688d31edcfce2a4af7de8cf299c8e53e70"
+            },
+            {
+              "shape": [
+                3,
+                129
+              ],
+              "dtype": "float32",
+              "sha256": "67dc2c1718bbbd5cc79e8f53c0cf200920dd9a04d12372ac3f197808c7aa4079"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "name": "layernorm (mean and variance)",
+      "signature": "(x, eps=1e-05)",
+      "total": 32,
+      "cases": [
+        {
+          "index": 0,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "6127cbf5225aad61822c765d18e4822c661c9961aab5bbe300e3fe66c319ddd0"
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "c57310b6f5080224aaa980d84294c3b303406c05d2c31334f6babbe5f5ed4dd0"
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "72247fa5268e00b1bba850b45ecf058217e648bc6a7ccf51078e8d1adc673c42"
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "7bd55edd63c5388c2f1b4e1c5488504255806c63174d872eaf580401edc2379c"
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "0922b08e8eafd8d734358c0f2772c584165026a4459467c45fc1463610fa9423"
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "a2f6c68fd4bc96d8008d3e7c8ff85d4110ea1fd833d0c30ce5987e52a28025a6"
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                512
+              ],
+              "dtype": "float32",
+              "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "f003cafa942a5108cc06db2ec9ee975d5daff9547438aab4e38dd41566286869"
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "44bfed4bd2ae631ef281085415f4b3a77bdfa97d24d8006ae0cb343c19a63c8f"
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "bdb25ca17c3f4a79186fa3ed1b3fafe007753c69df20ad0226abd2013045c2bb"
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                513
+              ],
+              "dtype": "float32",
+              "sha256": "48b687dac38b066eb8142f86faad3e100b3dca78938c3d0b75e2e6e540cef154"
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "e93d9a1a4a67faaac5dbbf27ea2f1d190956347c234c0de213f8b5e962cd179a"
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "4a04339f2e1c35277fd0bb1afb5cc027f57561ea15ffe2004b55ff3a365ac791"
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "145457893f85850ef94e092a4b23854e3b787e42e0e5ca79c2ab51dd211b5958"
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "c72f794755011236b351f125b491b064471ce6adab8ed9420d3d874c10e74510"
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "f7a557ae34b47808df06c1cf16d98591931fcb3bab03da0f2ab53e8c54403c84"
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "0d5c803654f83f1fe481478722fdeeef89c8cb2cae92ca15c7f8f68617d3a4b6"
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                7,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8"
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "cff1c005c6c194e5d79d710d597732e3b05e0a064206c4817232fb1cfc62cd02"
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "1d58b8abf7b3125cc92540fa685ded9c139d0d9b1eb8e52706f0cd9bbd513cf9"
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "034ac243680357b255216c1dcea1e7d6771e438af9d14ca27dabdf69bdc29921"
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                1
+              ],
+              "dtype": "float32",
+              "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560"
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "f77da3d331712540e45197a24fabc5c3171da8c461b204755bfc35b83428424c"
+            }
+          ]
+        },
+        {
+          "index": 25,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "a13441448cd95ad08a2631a4618fbcbc7b89fbe71c7a4ef78b28c845ab5a6103"
+            }
+          ]
+        },
+        {
+          "index": 26,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "4bd6146526274de72edf8fa4fe6f20cf9f1539b48c3bd71bd8e36e30803eebe0"
+            }
+          ]
+        },
+        {
+          "index": 27,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                31,
+                127
+              ],
+              "dtype": "float32",
+              "sha256": "6aab5ce9d71690000b783da98b92bca7b441c5f4c1b0c2a8a08ecd33feacaa14"
+            }
+          ]
+        },
+        {
+          "index": 28,
+          "label": "normal",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "0b43757077be3ac2859e37ca10dc5005919a744b7d7115b20b0851dc49445f2f"
+            }
+          ]
+        },
+        {
+          "index": 29,
+          "label": "large",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "c6f698632e69e124445fb47511b3fad5c61347e40c4118eaf11ec76b4d4e3c12"
+            }
+          ]
+        },
+        {
+          "index": 30,
+          "label": "identical rows",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "590f013212bf36064413c466c6bd1810d0a99becb57152f6c5a54123ee1fbaa8"
+            }
+          ]
+        },
+        {
+          "index": 31,
+          "label": "zeros",
+          "inputs": [
+            {
+              "shape": [
+                257,
+                61
+              ],
+              "dtype": "float32",
+              "sha256": "6fdc416648a3d7590c69e6e11628fea403d4fa1f162fb50e9bd2b573c7ae2e06"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "name": "windowed attention (band w)",
+      "signature": "(q, k, v, w)",
+      "total": 5,
+      "cases": [
+        {
+          "index": 0,
+          "label": "n=16 d=8 w=2",
+          "inputs": [
+            {
+              "shape": [
+                16,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "907e253d2c8ddb85e4965a39313e5feaaab4cce9f8052f3f6dc1293e81015b88"
+            },
+            {
+              "shape": [
+                16,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "adc2f33b21a27b9c0f607757d28e32ae146e20fd52d1566dffa08ab0b90d91e4"
+            },
+            {
+              "shape": [
+                16,
+                8
+              ],
+              "dtype": "float32",
+              "sha256": "85f5bd6167bebc1924bb00a92395949e2e07ccad24a08d900166184a85b085b1"
+            },
+            {
+              "value": 2
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "n=128 d=64 w=8",
+          "inputs": [
+            {
+              "shape": [
+                128,
+                64
+              ],
+              "dtype": "float32",
+              "sha256": "d538d32e6089af6af79e6c90b2748853809b801ba8684ad888decbd7ef22aa07"
+            },
+            {
+              "shape": [
+                128,
+                64
+              ],
+              "dtype": "float32",
+              "sha256": "33c7619fda13721da900eb95f5fb4facec0cdbb75e439c6ece18ab18a5416959"
+            },
+            {
+              "shape": [
+                128,
+                64
+              ],
+              "dtype": "float32",
+              "sha256": "97d0897aa9ef5f6c3477fd9194252e77bcacb8c0ae5f62647d5c4ae014d2e214"
+            },
+            {
+              "value": 8
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "n=129 d=33 w=7",
+          "inputs": [
+            {
+              "shape": [
+                129,
+                33
+              ],
+              "dtype": "float32",
+              "sha256": "b09dedad7b665cdca3cdea5cdf4b65efd700654050572f1df09a27bd914e5b11"
+            },
+            {
+              "shape": [
+                129,
+                33
+              ],
+              "dtype": "float32",
+              "sha256": "460bce563d7b4c39ac8e4c09e591f634989422aaae0636af7493fae96afe06cb"
+            },
+            {
+              "shape": [
+                129,
+                33
+              ],
+              "dtype": "float32",
+              "sha256": "0bd7b3aff8f1009daba49106576ea2463d28f4d75ce08726345f47def7028bc3"
+            },
+            {
+              "value": 7
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "n=5 d=4 w=100",
+          "inputs": [
+            {
+              "shape": [
+                5,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "c84f3a2c6ef14089c13080245c55865dd13f9bb7b7a27f05dee31c939474cbb7"
+            },
+            {
+              "shape": [
+                5,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "ccbf8b4ebd3e4483cdadfafc51721c6ad94c874585612d5c683541954bd9ffa1"
+            },
+            {
+              "shape": [
+                5,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "7874956a6c147cea7b2c29e5868bdccb4668d15f8d74ff82b380db23542f09ba"
+            },
+            {
+              "value": 100
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "label": "n=1 d=4 w=3",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "78014d86aa75fa838a940674057acab62959c1d35b5b1bbacb0efdec43729897"
+            },
+            {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "fe362971771c73ad903d2ee0db438c714addd9bb27d4ad9ec5857bd4a455ec8e"
+            },
+            {
+              "shape": [
+                1,
+                4
+              ],
+              "dtype": "float32",
+              "sha256": "d8a5fc90eebcdc1603bfd95225ecf486a32d0d3252c25c8ab440fcc6f5a24049"
+            },
+            {
+              "value": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 10,
+      "name": "1D conv with stride and dilation",
+      "signature": "(x, wt, stride, dilation)",
+      "total": 4,
+      "cases": [
+        {
+          "index": 0,
+          "label": "C4->3 L16 K3 s1 d1",
+          "inputs": [
+            {
+              "shape": [
+                4,
+                16
+              ],
+              "dtype": "float32",
+              "sha256": "d28ce36584442c26235f95a1b1c2e4171dc2c4199050281d7ade7b9610cb788e"
+            },
+            {
+              "shape": [
+                3,
+                4,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "0f1d5c0aa94b843bba0bd70e385e091886595f699963420d583533f4d64f1dd6"
+            },
+            {
+              "value": 1
+            },
+            {
+              "value": 1
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "label": "C8->16 L64 K5 s2 d1",
+          "inputs": [
+            {
+              "shape": [
+                8,
+                64
+              ],
+              "dtype": "float32",
+              "sha256": "627c8a7d6bd7795e0a6d5a2e22c38d495a40f33b64b91cfca6bf8851182033fa"
+            },
+            {
+              "shape": [
+                16,
+                8,
+                5
+              ],
+              "dtype": "float32",
+              "sha256": "e6b10fbbf1a2dc70b831a6882b42dd36911647295315b16553954d614f9d0896"
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 1
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "label": "C3->7 L31 K3 s2 d3",
+          "inputs": [
+            {
+              "shape": [
+                3,
+                31
+              ],
+              "dtype": "float32",
+              "sha256": "503db957419d49069d0c189c972c8c7959afaf44ccd60d51ab8facf08fb6c91b"
+            },
+            {
+              "shape": [
+                7,
+                3,
+                3
+              ],
+              "dtype": "float32",
+              "sha256": "1e1032934146bf19487756dede283ba0f60a4e54ab5d8ec27b384b2b13232b9e"
+            },
+            {
+              "value": 2
+            },
+            {
+              "value": 3
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "label": "C1->1 L7 K7 s1 d1",
+          "inputs": [
+            {
+              "shape": [
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "5fa02adde14bd7e2dddb3d806715b5219d4de08627fa6426b690521cd9ce04de"
+            },
+            {
+              "shape": [
+                1,
+                1,
+                7
+              ],
+              "dtype": "float32",
+              "sha256": "5d4831b282b752785f0968127730b2d2ac0b69381df281a5a4315ba6e5a9565c"
+            },
+            {
+              "value": 1
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "total_cases": 243
+}

@@ -1,0 +1,59 @@
+{
+  "host": "seat-97",
+  "devices": [
+    {
+      "instance_type": "trn2.48xlarge",
+      "instance_id": "i-09285ac7c7e5d4447",
+      "neuron_device": 0,
+      "bdf": "0000:cc:00.0",
+      "cpu_affinity": "48-95,144-191",
+      "numa_node": "1",
+      "connected_to": [
+        12,
+        1,
+        3,
+        4
+      ],
+      "nc_count": 4,
+      "logical_neuroncore_config": 2,
+      "memory_size": 103079215104,
+      "neuroncore_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "neuron_processes": [
+        {
+          "pid": 1756883,
+          "command": "",
+          "neuron_runtime_version": "2.34.10"
+        },
+        {
+          "pid": 1756884,
+          "command": "",
+          "neuron_runtime_version": "2.34.10"
+        }
+      ]
+    }
+  ],
+  "runtime": [
+    {
+      "pid": 1756883,
+      "loaded_model_cores": [
+        2
+      ]
+    },
+    {
+      "pid": 1756884,
+      "loaded_model_cores": [
+        3
+      ]
+    }
+  ],
+  "occupied_cores": [
+    2,
+    3
+  ],
+  "selected_core": 0
+}

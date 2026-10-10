@@ -1,0 +1,14 @@
+{
+  "origin": "Human adaptation of seat-95 model-generated candidate; this repaired file is not itself a fresh model-generated solution.",
+  "source_snapshot": "../original/snapshot.json",
+  "source_candidate": "../original/original_level08_attention.py",
+  "source_candidate_sha256": "432e82ce55c92dc9820100596467f1585c95b8212cb08865d32e5b059c419ec4",
+  "artifact_sha256": "bb6ecb551d1e9488686f3d35a8ed82fd76fc1db926bade2831bd6e8824d794d2",
+  "adapted_controller_core_hash": "9d88e4062534",
+  "validation_pod": "seat-97",
+  "hardware_official_cases": "3/3; each executed twice",
+  "independent_simulator_cases": "24/24",
+  "checker": "Copied unchanged from seat-95; original/nkibench.py matches nkibench.py byte-for-byte",
+  "hardware_evidence": "../results/adapted-device.json",
+  "model_server_paused": false
+}

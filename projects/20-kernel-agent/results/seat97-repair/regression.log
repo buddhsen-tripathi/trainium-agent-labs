@@ -1,0 +1,13 @@
+test_all_prompt_modes_include_attention_contract (test_attention_repairs.AttentionRepairs.test_all_prompt_modes_include_attention_contract) ... ok
+test_discarded_shape_dimension_is_not_treated_as_a_known_size (test_attention_repairs.AttentionRepairs.test_discarded_shape_dimension_is_not_treated_as_a_known_size) ... ok
+test_equal_reward_prefers_fewer_issues_before_novelty (test_attention_repairs.AttentionRepairs.test_equal_reward_prefers_fewer_issues_before_novelty) ... ok
+test_invented_matmul_transpose_keyword_is_caught (test_attention_repairs.AttentionRepairs.test_invented_matmul_transpose_keyword_is_caught) ... ok
+test_keyword_shape_preserves_output_contract (test_attention_repairs.AttentionRepairs.test_keyword_shape_preserves_output_contract) ... ok
+test_observed_invalid_apis_are_reported_together (test_attention_repairs.AttentionRepairs.test_observed_invalid_apis_are_reported_together) ... ok
+test_psum_cannot_be_stored_directly_to_hbm (test_attention_repairs.AttentionRepairs.test_psum_cannot_be_stored_directly_to_hbm) ... ok
+test_working_fixture_has_no_static_issues (test_attention_repairs.AttentionRepairs.test_working_fixture_has_no_static_issues) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.013s
+
+OK
